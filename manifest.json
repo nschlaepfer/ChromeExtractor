@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Text Extractor with Markdown",
+  "version": "1.0",
+  "description": "Extracts text from any site and displays it in markdown format inside a modal window.",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["modal.js", "styles.css", "markdown.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+
+  }
+}

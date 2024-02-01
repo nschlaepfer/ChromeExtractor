@@ -1,0 +1,47 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Styling for the popup content */
+#popup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Styling for the extract text button */
+#extract-text-btn {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#extract-text-btn:hover {
+    background-color: #e03e00;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Modal styling */
+#markdown-modal-container {
+    /* The modal container styles are dynamically added through modal.js */
+}
+
+/* Modal content box styling */
+.modal-content {
+    /* The modal content styles are dynamically added through modal.js */
+}
+
+/* Markdown text styling */
+/* You can add specific markdown related styles here. For simplicity, this example does not include specific markdown styles. */
