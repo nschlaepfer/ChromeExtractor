@@ -3,9 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     extractTextBtn.addEventListener('click', function() {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            chrome.tabs.executeScript(
-                tabs[0].id,
-                {file: 'content.js'}
+            chrome.scripting.executeScript(
+                {
+                    target: {tabId: tabs[0].id},
+                    files: ['content.js']
+                }
             );
         });
     });
