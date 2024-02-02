@@ -20,24 +20,26 @@ function createFireButton() {
   document.body.appendChild(fireButton);
 
   // Add click event listener to the button
-  fireButton.addEventListener('click', extractAndSendText);
+  fireButton.addEventListener('click', function() {
+    extractAndSendText();
+    this.classList.toggle('glow-on-click');
+  });
 }
 
 // Function to extract text and send it to the background script
-function extractAndSendText() {
+async function extractAndSendText() {
     const text = document.body.innerText;
     console.log(text);
     // Display the extracted text in an alert
     alert(text);
     // Send the extracted text to the background script
-    chrome.runtime.sendMessage({action: "openModal", text: text}, function(response) {
-      if (chrome.runtime.lastError) {
-          console.error("Error sending message:", chrome.runtime.lastError);
-          // Optionally, implement a retry mechanism or notify the user here
-      } else {
-          console.log('Response from background:', response.status);
-      }
-    });
+    try {
+      const response = await chrome.runtime.sendMessage({action: "openModal", text: text});
+      console.log('Response from background:', response.status);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      // Optionally, implement a retry mechanism or notify the user here
+    }
 }
 
 // Check if the button already exists to avoid duplicates

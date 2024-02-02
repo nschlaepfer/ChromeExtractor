@@ -3,7 +3,7 @@
   "name": "Text Extractor with Markdown",
   "version": "1.0",
   "description": "Extracts text from any site and displays it in markdown format inside a modal window.",
-  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "permissions": ["activeTab", "scripting", "storage", "tabs", "history"],
   "host_permissions": [
     "<all_urls>"
   ],
@@ -19,7 +19,8 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
   ],
   "web_accessible_resources": [

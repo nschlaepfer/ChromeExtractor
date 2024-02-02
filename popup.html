@@ -3,29 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Extractor 🪄</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Text Extractor</title>
+    <!-- Bootstrap CSS for responsive layout and components -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="popup.css">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://code.jquery.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com;">
 </head>
 <body>
-    <div id="popup-container">
-        <header>
-            <h1>Text Extractor Extension <i class="fa fa-cog" id="settings-icon"></i></h1>
-        </header>
-        <section id="content">
-            <button id="extract-text-btn" class="action-btn">Extract Text</button>
-            <!-- Add more interactive elements as needed -->
-            <!-- Section for displaying extracted text -->
-            <div id="extracted-text-container">
-                <h2>Extracted Text</h2>
-                <div id="extracted-text" class="extracted-text-content"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div id="popup-container" class="bg-white rounded shadow-sm p-3">
+                    <header class="text-center mb-4">
+                        <h1>Text Extractor</h1>
+                    </header>
+                    <!-- Navigation Tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true" aria-expanded="true">Visited Sites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="saved-sites-tab" data-toggle="tab" href="#saved-sites" role="tab" aria-controls="saved-sites" aria-selected="false" aria-expanded="false">Saved Sites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false" aria-expanded="false">
+                                <i class="fas fa-cog"></i> Settings
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="myTabContent">
+                        <!-- Visited Sites Tab -->
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="input-group mb-3">
+                                <input type="text" id="search-bar" class="form-control" placeholder="Search sites..." aria-label="Search sites">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
+                                </div>
+                            </div>
+                            <section id="sites-list" class="mb-3">
+                                <!-- Sites will be dynamically listed here -->
+                            </section>
+                            <button id="clear-list" class="btn btn-danger btn-block">Clear List</button>
+                        </div>
+
+                        <!-- Saved Sites Tab -->
+                        <div class="tab-pane fade" id="saved-sites" role="tabpanel" aria-labelledby="saved-sites-tab">
+                            <section id="saved-sites-list" class="mb-3">
+                                <!-- Saved sites will be dynamically listed here -->
+                            </section>
+                        </div>
+
+                        <!-- Settings Tab -->
+                        <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                            <button class="btn btn-info btn-block">Some Setting</button>
+                        </div>
+                    </div>
+
+                    <footer class="text-center mt-3">
+                        <p>Thank you for using Text Extractor!</p>
+                        <p>nschlaepfer on GitHub - 2024</p>
+                    </footer>
+                </div>
             </div>
-        </section>
-        <footer>
-            <p>Thank you for using Text Extractor!</p>
-            <p>© nschlaepfer 2024</p>
-        </footer>
+        </div>
     </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.7.12/umd.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
     <script src="popup.js"></script>
 </body>
 </html>

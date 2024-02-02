@@ -8,100 +8,110 @@
 body, html {
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
 }
 
+:root {
+  --primary-color: #007bff;
+  --hover-color: #0056b3;
+  --glow-start-color: #ff4500;
+  --glow-end-color: #ffa500;
+  --button-background-color: blue;
+  --button-text-color: white;
+}
+
 #popup-container {
     padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
 }
 
 header {
-    margin-bottom: 20px;
+    background-color: #0057b7;
+    color: white;
+    padding: 15px 20px;
+    border-top-left-radius: 12px; /* Rounded corners */
+    border-top-right-radius: 12px; /* Rounded corners */
 }
 
 h1 {
-    color: #333;
     font-size: 24px;
+    margin: 0;
 }
 
-#content {
-    margin: 20px 0;
+#sites-list {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.site-entry {
+    background-color: #f9f9f9;
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px 0;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.site-entry:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-preview {
+    width: calc(100% + 40px); /* Full width plus padding for visual effect */
+    height: 200px;
+    margin-left: -20px; /* Align with the edge of the container */
+    border: none;
+    pointer-events: none;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.site-info {
+    padding: 15px;
+    background-color: #ffffff;
 }
 
 .action-btn {
-    background-color: #0057b7;
-    color: white;
+    border-radius: 4px; /* Rounded corners */
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #007bff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .action-btn:hover {
-    background-color: #003c82;
+    background-color: #0056b3;
+}
+
+.glow-on-click {
+  animation: glow-animation 1.5s infinite;
+}
+
+.rounded-corners {
+    border-radius: 10px; /* Adjust as needed */
+}
+
+@keyframes glow-animation {
+  0% { box-shadow: 0 0 5px #ff4500, 0 0 15px #ff4500, 0 0 30px #ff4500, 0 0 45px #ffa500; }
+  50% { box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 35px #ff4500, 0 0 50px #ffa500; }
+  100% { box-shadow: 0 0 5px #ff4500, 0 0 15px #ff4500, 0 0 30px #ff4500, 0 0 45px #ffa500; }
 }
 
 footer {
-    margin-top: 20px;
+    padding-top: 20px;
     font-size: 14px;
-    color: #666;
+    color: #666666;
 }
 
-/* Styles for the extracted text box */
-#extracted-text-container {
-    margin-top: 20px;
-    padding: 20px; /* Increased padding for better readability */
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 10px; /* Increased rounded corners */
-    background-color: #f9f9f9; /* Light grey background */
-    width: 90%; /* Increased width */
-    max-width: 800px; /* Maximum width to ensure it doesn't get too wide */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
-    margin-left: auto; /* Centers the box horizontally */
-    margin-right: auto; /* Centers the box horizontally */
-    overflow: hidden; /* Ensure the container doesn't overflow */
-}
-
-#extracted-text {
-    white-space: pre-wrap; /* Ensures that whitespace and line breaks are preserved */
-    word-wrap: break-word; /* Ensures long words do not overflow */
-    max-height: 200px; /* Maximum height before scrolling */
-    overflow-y: auto; /* Adds a vertical scrollbar if necessary */
-    font-size: 16px; /* Adjust font size for readability */
-    line-height: 1.5; /* Improve line spacing */
-    text-align: justify; /* Justify text for a cleaner look */
-    margin: 0 auto; /* Center the text block if needed */
-    max-width: 100%; /* Ensure the text block doesn't exceed the container width */
-}
-
-#settings-icon {
-    font-size: 24px; /* Match the size of the header text */
-    color: #333; /* Match the color of the header text */
-    cursor: pointer; /* Change the cursor to indicate it's clickable */
-    margin-left: 10px; /* Space out the icon from the header text */
-}
-
-/* Hover effect for the settings icon */
-#settings-icon:hover {
-    color: #0057b7; 
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    #extracted-text {
-        font-size: 14px; /* Smaller font size on smaller screens */
-    }
-    #extracted-text-container {
-        padding: 15px; /* Less padding on smaller screens */
-    }
-}
-
-/* Handling Long Words and URLs */
-#extracted-text {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+footer p {
+    margin: 5px 0;
 }
