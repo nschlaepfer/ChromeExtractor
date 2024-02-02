@@ -10,12 +10,13 @@ function createFireButton() {
   fireButton.style.zIndex = '1000';
   fireButton.style.fontSize = '24px';
   fireButton.style.border = 'none';
-  fireButton.style.background = 'orange';
+  fireButton.style.background = 'blue';
   fireButton.style.color = 'white';
   fireButton.style.borderRadius = '50%';
   fireButton.style.cursor = 'pointer';
   fireButton.style.padding = '10px 15px';
   fireButton.id = 'extract-text-fire-btn';
+  fireButton.classList.add('button-hover-effect');
   document.body.appendChild(fireButton);
 
   // Add click event listener to the button
@@ -59,4 +60,18 @@ port.onMessage.addListener(function(msg) {
 port.onDisconnect.addListener(function() {
   console.log("Connection to background lost.");
   // Here you can handle reconnection or notify the user as necessary
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var buttons = document.querySelectorAll('.button-hover-effect');
+    
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            this.classList.add('animate-border');
+            
+            setTimeout(() => {
+                this.classList.remove('animate-border');
+            }, 2000); // Match the duration of your CSS animation
+        });
+    });
 });

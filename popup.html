@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Extractor</title>
+    <title>Text Extractor 🪄</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
-    <div id="popup-content">
-        <button id="extract-text-btn" title="Extract Text">
-            🔥
-        </button>
+    <div id="popup-container">
+        <header>
+            <h1>Text Extractor Extension <i class="fa fa-cog" id="settings-icon"></i></h1>
+        </header>
+        <section id="content">
+            <button id="extract-text-btn" class="action-btn">Extract Text</button>
+            <!-- Add more interactive elements as needed -->
+            <!-- Section for displaying extracted text -->
+            <div id="extracted-text-container">
+                <h2>Extracted Text</h2>
+                <div id="extracted-text" class="extracted-text-content"></div>
+            </div>
+        </section>
+        <footer>
+            <p>Thank you for using Text Extractor!</p>
+            <p>© nschlaepfer 2024</p>
+        </footer>
     </div>
     <script src="popup.js"></script>
 </body>

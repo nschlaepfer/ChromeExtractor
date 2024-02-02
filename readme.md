@@ -1,32 +1,42 @@
-To unpack and install the "Text Extractor with Markdown" Chrome extension into Chrome, follow these steps:
+# Text Extractor with Markdown Chrome Extension
 
-1. Download and Extract the Extension:
-- Ensure you have the extension files downloaded to your computer. If they're in a compressed format (e.g., ZIP), extract them to a known directory.
+This document provides instructions for installing the "Text Extractor with Markdown" Chrome extension and outlines potential future features.
 
-2. Open Chrome Extensions Page:
-- Open Google Chrome, and in the address bar, type chrome://extensions/ and press Enter. This opens the Extensions page.
+## Installation Guide
 
-3. Enable Developer Mode:
-- In the top right corner of the Extensions page, toggle the "Developer mode" switch to the ON position.
+Follow these steps to install the extension in Google Chrome:
 
-4. Load Unpacked Extension:
-- Click the "Load unpacked" button that appears in the top left corner after enabling Developer mode.
-- Navigate to the directory where you extracted the extension files and select it. The extension should now appear in your list of installed extensions.
+### 1. Download and Extract the Extension
+- **Download**: Ensure you have the extension files on your computer. If in a compressed format (e.g., ZIP), extract them to a known directory.
 
-5. Verify Installation:
-- Ensure the extension is enabled by locating it in the list of installed extensions and checking that the toggle switch is in the ON position.
-- You should now see the extension icon in your Chrome toolbar, indicating it's ready for use.
-Possible Future Features
+### 2. Open Chrome Extensions Page
+- **Navigate**: In Chrome, type `chrome://extensions/` in the address bar and press Enter to open the Extensions page.
 
-1. Settings Page for Customization:
-- Implement a settings page (options.html and options.js) to allow users to customize the extension, such as changing the keyboard shortcut, modifying the appearance of the modal window, or setting preferences for markdown conversion.
+### 3. Enable Developer Mode
+- **Toggle**: Find the "Developer mode" switch in the top right corner of the Extensions page and toggle it to the ON position.
 
-2. Server Integration with Truth Torch:
-- Develop functionality to send extracted text to a server for further processing or storage. This could involve creating an API on the server side that accepts text data and responds with processed information or confirmation of storage.
-- Enhance the extension to handle authentication and secure communication with the server, ensuring user data is protected.
+### 4. Load Unpacked Extension
+- **Load**: Click "Load unpacked" in the top left corner, navigate to the directory where you extracted the extension files, and select it. The extension will now be listed among your installed extensions.
 
-3. Enhanced Markdown Conversion:
-- Improve the convertTextToMarkdown function in markdown.js to handle more complex text structures and markdown features, such as tables, images, and advanced formatting options.
+### 5. Verify Installation
+- **Check**: Ensure the extension is enabled by verifying that its toggle switch is in the ON position. The extension icon should appear in your Chrome toolbar, indicating it's ready for use.
 
-4. User Profiles and Syncing:
-- Introduce user profiles that allow settings and data to be synced across devices. This would require server-side support for user management and data synchronization.
+## Potential Future Features
+
+### 1. Settings Page for Customization
+- **Customize**: Implement a settings page (`options.html` and `options.js`) for user customization, including keyboard shortcut changes, modal window appearance, and markdown conversion preferences.
+
+### 2. Server Integration with Truth Torch
+- **Integrate**: Develop functionality to send extracted text to a server for processing or storage, including API creation for text data handling and enhancements for secure communication.
+
+### 3. Enhanced Markdown Conversion
+- **Improve**: Upgrade the `convertTextToMarkdown` function in `markdown.js` to support complex text structures and advanced markdown features like tables, images, and formatting options.
+
+### 4. User Profiles and Syncing
+- **Sync**: Introduce user profiles for settings and data synchronization across devices, requiring server-side support for user management and data sync.
+
+## Feedback and Contributions
+
+We welcome feedback and contributions to improve this extension. Please feel free to submit issues or pull requests on our GitHub repository.
+
+Thank you for using the "Text Extractor with Markdown" Chrome extension!

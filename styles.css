@@ -1,47 +1,84 @@
-/* General body styling */
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
-/* Styling for the popup content */
-#popup-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+#popup-container {
+    padding: 20px;
 }
 
-/* Styling for the extract text button */
-#extract-text-btn {
-    background-color: #ff4500;
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+#content {
+    margin: 20px 0;
+}
+
+.action-btn {
+    background-color: #0057b7;
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    font-size: 18px;
+    transition: background-color 0.3s;
 }
 
-#extract-text-btn:hover {
-    background-color: #e03e00;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+.action-btn:hover {
+    background-color: #003c82;
 }
 
-/* Modal styling */
-#markdown-modal-container {
-    /* The modal container styles are dynamically added through modal.js */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
 }
 
-/* Modal content box styling */
-.modal-content {
-    /* The modal content styles are dynamically added through modal.js */
+/* Styles for the extracted text box */
+#extracted-text-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 10px; /* Increased rounded corners */
+    background-color: #f9f9f9; /* Light grey background */
+    width: 90%; /* Increased width */
+    max-width: 800px; /* Maximum width to ensure it doesn't get too wide */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+    margin-left: auto; /* Centers the box horizontally */
+    margin-right: auto; /* Centers the box horizontally */
 }
 
-/* Markdown text styling */
-/* You can add specific markdown related styles here. For simplicity, this example does not include specific markdown styles. */
+#extracted-text {
+    white-space: pre-wrap; /* Ensures that whitespace and line breaks are preserved */
+    word-wrap: break-word; /* Ensures long words do not overflow */
+    max-height: 200px; /* Maximum height before scrolling */
+    overflow-y: auto; /* Adds a vertical scrollbar if necessary */
+}
+#settings-icon {
+    font-size: 24px; /* Match the size of the header text */
+    color: #333; /* Match the color of the header text */
+    cursor: pointer; /* Change the cursor to indicate it's clickable */
+    margin-left: 10px; /* Space out the icon from the header text */
+}
+
+/* Hover effect for the settings icon */
+#settings-icon:hover {
+    color: #0057b7; 
+}

@@ -24,6 +24,7 @@ function showModalWithMarkdown(text) {
   modalContent.style.maxWidth = '80%';
   modalContent.style.maxHeight = '80%';
   modalContent.style.overflowY = 'auto';
+  modalContent.className = 'modal-content'; // Ensure the modal content has the 'modal-content' class applied
 
   // Convert the extracted text to markdown format
   const markdownText = convertTextToMarkdown(text);
