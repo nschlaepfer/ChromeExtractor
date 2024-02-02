@@ -27,6 +27,9 @@ function createFireButton() {
 function extractAndSendText() {
     const text = document.body.innerText;
     console.log(text);
+    // Display the extracted text in an alert
+    alert(text);
+    // Send the extracted text to the background script
     chrome.runtime.sendMessage({action: "openModal", text: text}, function(response) {
       if (chrome.runtime.lastError) {
           console.error("Error sending message:", chrome.runtime.lastError);

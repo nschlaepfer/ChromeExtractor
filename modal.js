@@ -54,6 +54,7 @@ function convertTextToMarkdown(text) {
 // Listen for messages from the content script
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "openModal") {
+    console.log(request.text); // Logging the extracted text to the console
     showModalWithMarkdown(request.text);
     sendResponse({status: 'Modal opened'});
   }

@@ -54,7 +54,7 @@ footer {
 /* Styles for the extracted text box */
 #extracted-text-container {
     margin-top: 20px;
-    padding: 10px;
+    padding: 20px; /* Increased padding for better readability */
     border: 1px solid #ccc; /* Light grey border */
     border-radius: 10px; /* Increased rounded corners */
     background-color: #f9f9f9; /* Light grey background */
@@ -63,6 +63,7 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
     margin-left: auto; /* Centers the box horizontally */
     margin-right: auto; /* Centers the box horizontally */
+    overflow: hidden; /* Ensure the container doesn't overflow */
 }
 
 #extracted-text {
@@ -70,7 +71,13 @@ footer {
     word-wrap: break-word; /* Ensures long words do not overflow */
     max-height: 200px; /* Maximum height before scrolling */
     overflow-y: auto; /* Adds a vertical scrollbar if necessary */
+    font-size: 16px; /* Adjust font size for readability */
+    line-height: 1.5; /* Improve line spacing */
+    text-align: justify; /* Justify text for a cleaner look */
+    margin: 0 auto; /* Center the text block if needed */
+    max-width: 100%; /* Ensure the text block doesn't exceed the container width */
 }
+
 #settings-icon {
     font-size: 24px; /* Match the size of the header text */
     color: #333; /* Match the color of the header text */
@@ -81,4 +88,20 @@ footer {
 /* Hover effect for the settings icon */
 #settings-icon:hover {
     color: #0057b7; 
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #extracted-text {
+        font-size: 14px; /* Smaller font size on smaller screens */
+    }
+    #extracted-text-container {
+        padding: 15px; /* Less padding on smaller screens */
+    }
+}
+
+/* Handling Long Words and URLs */
+#extracted-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
